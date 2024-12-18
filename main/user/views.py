@@ -10,3 +10,9 @@ def show_account(request):
 
 def show_games(request):
     return render(request, "user/games.html")
+
+def show_community(request):
+    return render(request, "user/community.html")
+
+def show_shop(request):
+    return render(request, "user/shop.html")
