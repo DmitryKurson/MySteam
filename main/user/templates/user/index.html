@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+{% extends 'main/layout.html' %}
 
+{% block title %}
+<title>Welcome gamer page</title>
+{% endblock %}
+
+{% block content %}
     <h1>Головне меню користувача</h1>
 
-    <a>Магазин</a>
-    <a href="games">Бібліотека</a>
-    <a>Спільнота</a>
-    <a href="account">Профіль</a>
+    <a> <i class="fa-solid fa-cart-shopping"></i> Магазин</a>
+    <a href="games"> <i class="fa-solid fa-book"></i> </i> Бібліотека</a>
+    <a> <i class="fa-regular fa-comments"></i> Спільнота</a>
+    <a href="account"> <i class="fa-regular fa-circle-user"></i> Профіль</a>
 
-</head>
-<body>
 
-</body>
-</html>
+{% endblock %}

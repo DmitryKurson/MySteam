@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome page</title>
+{% extends 'main/layout.html' %}
+
+{% block title %}
+<title>Welcome page</title>
+{% endblock %}
+
+{% block content %}
     <h1>Головне меню</h1>
-
-
-</head>
-<body>
     <p>Це головне вікно MySteam. Тут ви можете увійти як користувач, чи як модератор</p>
     <a href="user">Увійти як користувач</a>
-</body>
-
-<footer>
-    <p>Сайт MySteam. Всі права захищені 2025 (C)</p>
-</footer>
-</html>
+{% endblock %}
