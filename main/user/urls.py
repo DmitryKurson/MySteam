@@ -8,5 +8,7 @@ urlpatterns = [
     path('games', views.show_games, name="games"),
     path('community', views.show_community, name="community"),
     path('account', views.show_account, name="account"),
+    path('login/', views.show_login, name="login"),
+    path('create', views.show_create, name="create")
 ]
 

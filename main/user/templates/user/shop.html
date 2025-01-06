@@ -7,7 +7,17 @@
 
 {% block content %}
 <h1>Магазин</h1>
-
+{% for i in games %}
+<div>
+    <h3>Назва {{i.title}}</h3>
+    <h5>Жанр {{i.genre}}</h5>
+    <h5>Опис {{i.description}}</h5>
+    <h5>Ціна {{i.price}}</h5>
+    <h5>Мови {{i.languages}}</h5>
+    <h5>Відгуки {{i.feedbacks}}</h5>
+</div>
+{% endfor %}
 
 <a href="{% url 'index' %}">Назад</a>
+
 {% endblock %}
