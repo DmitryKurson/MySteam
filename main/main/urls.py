@@ -7,4 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.welcomepage, name="index"),
     path('user/', include('user.urls')),
+    path('moderator/', include('moderator.urls'))
 ]
