@@ -1,4 +1,3 @@
-
 {% extends 'main/layout.html' %}
 
 {% block title %}
@@ -9,15 +8,22 @@
 <h1>Магазин</h1>
 {% for i in games %}
 <div>
-    <h3>Назва {{i.title}}</h3>
-    <h5>Жанр {{i.genre}}</h5>
-    <h5>Опис {{i.description}}</h5>
-    <h5>Ціна {{i.price}}</h5>
-    <h5>Мови {{i.languages}}</h5>
-    <h5>Відгуки {{i.feedbacks}}</h5>
+    <h3>{{i.title}}</h3>
+    <h8>Жанр: {{i.genre}}</h8><br>
+    <h8>Опис: {{i.description}}</h8><br>
+    <h8>Ціна: {{i.price}}</h8><br>
+    <h8>Мови: {{i.languages}}</h8><br>
+    <h8>Відгуки: {{i.feedbacks}}</h8><br>
+    <form method = "post">
+        {% csrf_token %}
+        <input type="hidden" name="game_id" value="{{ i.id }}">
+        <button type="submit">Купити</button>
+    </form>
+    <br>
+    <br>
 </div>
 {% endfor %}
 
-<a href="{% url 'index' %}">Назад</a>
+<a href="..">Назад</a>
 
 {% endblock %}

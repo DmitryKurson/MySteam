@@ -3,18 +3,24 @@
 
 {% block title %}
 <title>Games</title>
-{% endblock %}
 
-{% block content %}
-<h1>Ваша бібліотека</h1>
-   <ul>
-        <li>Назва: ...</li>
-        <li>Опис: ...</li>
-        <li>Ціна: ...</li>
-        <li>Жанр: ...</li>
-        <li>Мови: ...</li>
-        <li>Обмеження: ...</li>
-    </ul>
+
+{% for i in games %}
+<div>
+    <h3>{{i}}</h3>
+    <form>
+        <button type="submit">Грати</button><br><br>
+    </form>
+</div>
+{% endfor %}
+
+
+<a href="shop">В магазин</a><br><br>
+
+
 
 <a href="{% url 'index' %}">Назад</a>
+
+
+
 {% endblock %}
