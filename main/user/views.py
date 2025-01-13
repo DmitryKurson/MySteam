@@ -12,7 +12,7 @@ def show_index(request, user_id):
 
 def show_account(request, user_id):
     user = get_object_or_404(User, id=user_id)
-    return render(request, "user/account.html",{'user':user})
+    return render(request, "user/account.html",{'user':user, "user_id":user_id})
 
 def show_games(request, user_id):
     user = get_object_or_404(User, id=user_id)
@@ -20,7 +20,7 @@ def show_games(request, user_id):
     games = games_str.split(", ")
     if games[0] == "":
         games = []
-    return render(request, "user/games.html", {'games':games})
+    return render(request, "user/games.html", {'games':games, "user_id":user_id})
 
 def show_community(request):
     return render(request, "user/community.html")
@@ -44,10 +44,10 @@ def show_shop(request, user_id):
                 user.bought_games = game.title
             user.count_of_games += 1
             user.save()
-            return redirect('shop', user_id=user.id)
+            return redirect('shop', user_id=user_id)
         except:
             return HttpResponse("Game not found", status=404)
-    return render(request, "user/shop.html", {'games':games_to_show, 'user':user})
+    return render(request, "user/shop.html", {'games':games_to_show, 'user_id':user_id})
 
 def show_login(request):
     if request.method == 'POST':
