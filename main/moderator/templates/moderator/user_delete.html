@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+<title>User delete</title>
+{% endblock %}
+
+{% block content %}
+<h1>Чи ви впевнені?</h1>
+<form method="post">
+    {% csrf_token %}
+    <br>
+    <button type="submit">Так, я впевнений - Видалити аккаунт</button>
+</form>
+
+<a href="{% url 'index' %}">Назад</a>
+
+{% endblock %}

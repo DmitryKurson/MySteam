@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+<title>Users</title>
+{% endblock %}
+
+{% block content %}
+<h1>Користувачі</h1>
+{% for i in users %}
+<div>
+    <h3>{{i.username}}</h3>
+    <h8>Ім'я: {{i.name}}</h8><br>
+    <h8>Прізвище: {{i.surname}}</h8><br>
+    <h8>Номер телефону: {{i.phone_number}}</h8><br>
+    <h8>Електронна пошта: {{i.email}}</h8><br>
+    <h8>Куплено ігор: {{i.count_of_games }}</h8><br>
+    <h8>Куплені ігри: {{i.bought_games}}</h8><br>
+
+    <a href="{% url 'user_delete' i.id %}">Видалити аккаунт</a><br><br>
+</div>
+{% endfor %}
+
+<a href="{% url 'index' %}">Назад</a>
+
+{% endblock %}
