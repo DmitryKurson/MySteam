@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from user.models import User, Game, Feedback
-from django.views.generic import DeleteView, UpdateView
+from django.views.generic import DeleteView
 
 class UserDeleteView(DeleteView):
     model = User
-    success_url = 'moderator/users'
-    template_name = 'moderator/templates/moderator/user_delete.html'
+    success_url = '..'
+    template_name = 'moderator/user_delete.html'
 
 # Create your views here.
 def show_index(request):

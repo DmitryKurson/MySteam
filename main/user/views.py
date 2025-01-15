@@ -1,11 +1,16 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
+from django.views.generic import UpdateView
 
 from .forms import UserForm
 from .models import Game, User
 
+class UserUpdateView(UpdateView):
+    model = User
+    template_name = 'user/create.html'
+    form_class = UserForm
+    success_url = "../.."
 
-# Create your views here.
 def show_index(request, user_id):
     user = get_object_or_404(User, id=user_id)
     return render(request, "user/index.html",{'user':user})
