@@ -1,0 +1,11 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+<title>Load from file</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Завантаження успішне</h1>
+    <p>Дані були успішно завантажні з json-файлу</p>
+    <a href="{% url 'show_users' %}">На головну</a>
+{% endblock %}
