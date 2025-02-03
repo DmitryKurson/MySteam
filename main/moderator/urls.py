@@ -5,6 +5,7 @@ urlpatterns = [
     path('', views.show_index, name="index"),
     path('games/', views.show_shop, name="show_shop"),
     path('users/', views.show_users, name="show_users"),
+    path('save_to_file/', views.save_users_to_file, name='save_users_to_file'),
     path('users/<int:pk>/delete', views.UserDeleteView.as_view(), name="user_delete")
 
 ]
