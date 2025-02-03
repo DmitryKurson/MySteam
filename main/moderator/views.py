@@ -18,16 +18,3 @@ def show_users(request):
 def show_shop(request):
     games = Game.objects.all()
     return render(request, "moderator/game.html", {"games":games})
-
-
-
-
-def show_games(request):
-
-    return render(request, "main/index.html")
-
-
-
-def show_community(request):
-
-    return render(request, "main/index.html")

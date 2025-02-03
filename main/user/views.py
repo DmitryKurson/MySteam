@@ -73,7 +73,7 @@ def show_create(request):
             user.count_of_games = 0
             user.bought_games = ""
             user.save()
-            return redirect('index')
+            return redirect('..')
     form = UserForm()
     data = {'form': form}
     return render(request, "user/create.html", data)
