@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'main/layout.html' %}
 
-</body>
-</html>
+{% block title %}
+<title>Games</title>
+{% endblock %}
+
+{% block content %}
+<h1>Ігри</h1>
+{% for i in games %}
+<div>
+    <h3>{{i.title}}</h3>
+    <h8>Жанр: {{i.genre }}</h8><br>
+    <h8>Прізвище: {{i.surname}}</h8><br>
+    <h8>Опис: {{i.description}}</h8><br>
+    <h8>Ціна: {{i.price}}</h8><br>
+    <h8>Мови: {{i.languages }}</h8><br>
+    <h8>Відгуки: {{i.feedbacks}}</h8><br>
+
+
+    <a href="{% url 'game_delete' i.id %}">Видалити гру</a><br><br>
+</div>
+{% endfor %}
+
+<!--
+
+<br><a href= "{% url 'save_users_to_file' %}">Створити резервну копію таблиці</a><br>
+<br><a href= "{% url 'load_users_from_file' %}">Завантажити дані з резервного файлу</a><br>
+!-->
+<a href="{% url 'index' %}">Назад</a>
+
+{% endblock %}

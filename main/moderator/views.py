@@ -10,6 +10,11 @@ class UserDeleteView(DeleteView):
     success_url = '..'
     template_name = 'moderator/user_delete.html'
 
+class GameDeleteView(DeleteView):
+    model = Game
+    success_url = '..'
+    template_name = 'moderator/game_delete.html'
+
 # Create your views here.
 def show_index(request):
     return render(request, "moderator/index.html")
