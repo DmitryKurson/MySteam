@@ -1,9 +1,11 @@
 import json
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from user.models import User, Game, Feedback
 from django.views.generic import DeleteView
+from .forms import GameForm
+
 
 class UserDeleteView(DeleteView):
     model = User
@@ -15,7 +17,18 @@ class GameDeleteView(DeleteView):
     success_url = '..'
     template_name = 'moderator/game_delete.html'
 
-# Create your views here.
+def show_create(request):
+    if request.method == 'POST':
+        form = GameForm(request.POST)
+        if form.is_valid():
+            game = form.save(commit=False)
+            game.feedbacks = ""
+            game.save()
+            return redirect('..')
+    form = GameForm()
+    data = {'form': form}
+    return render(request, "moderator/game_create.html", data)
+
 def show_index(request):
     return render(request, "moderator/index.html")
 

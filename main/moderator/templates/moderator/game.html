@@ -6,6 +6,8 @@
 
 {% block content %}
 <h1>Ігри</h1>
+<a href="{% url 'create' %}">Додати гру</a>
+
 {% for i in games %}
 <div>
     <h3>{{i.title}}</h3>

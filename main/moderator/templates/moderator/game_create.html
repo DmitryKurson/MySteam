@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'main/layout.html' %}
 
-</body>
-</html>
+{% block title %}
+<title>Game registration</title>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <label>Введіть назву</label>
+        {{ form.title }}<br>
+        <label>Введіть жанр</label>
+        {{ form.genre }}<br>
+        <label>Введіть опис</label>
+        {{ form.description }}<br>
+        <label>Введіть ціну</label>
+        {{ form.price }}<br>
+        <label>Введіть мови</label>
+        {{ form.languages }}<br>
+        <button type="submit">Зберегти</button>
+    </form>
+{% endblock %}
